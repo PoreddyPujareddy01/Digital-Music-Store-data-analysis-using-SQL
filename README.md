@@ -233,10 +233,10 @@ WHERE track_id IN(
 	JOIN genre ON track.genre_id = genre.genre_id
 	WHERE genre.name LIKE 'Rock')
 ORDER BY email;
-
+```
 Q7: Let's invite the artists who have written the most rock music in our dataset.
 Write a query that returns the Artist name and total track count of the top 10 rock bands.
-
+```sql
 SELECT 
     artist.artist_id, 
     artist.name,
@@ -256,9 +256,9 @@ GROUP BY
 ORDER BY 
     number_of_songs DESC
 LIMIT 10;
-
+```
 Q8: Return all the track names that have a song length longer than the average song length. Return the name and milliseconds for each track. Order by the song length with the longest songs listed first.
-
+```sql
 SELECT 
     name, 
     milliseconds 
@@ -268,9 +268,9 @@ WHERE
     milliseconds > (SELECT AVG(milliseconds) AS avg_song_length FROM track)
 ORDER BY 
     milliseconds DESC;
-
+```
 Q9: Write a query to find the most popular music genre by counting the number of tracks per genre from the genre and track tables.
-
+```sql
 SELECT 
     g.name AS genre_name, 
     COUNT(t.track_id) AS track_count
@@ -283,10 +283,10 @@ GROUP BY
 ORDER BY 
     track_count DESC
 LIMIT 1;
-
+```
 Q10: Write a query to list all employees who work in a specific city, such as "Calgary"
 using the employee table.
-
+```sql
 SELECT 
     employee_id, 
     first_name, 
