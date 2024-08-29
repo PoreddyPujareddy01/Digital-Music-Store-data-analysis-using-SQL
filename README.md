@@ -13,7 +13,9 @@ This project is designed to provide a foundational understanding of data analysi
 1.Learn to analyze a music playlist database using SQL to uncover insights that drive business decisions and support strategic growth.
 
 2._CTAS_ (Create Table As Select): Utilize CTAS to create new tables based on query results.
-
+## Database and Tools
+- Postgre SQL
+- PgAdmin4
 ### Project Structure:
 
 ### 1.Database Setup
@@ -146,9 +148,9 @@ CREATE TABLE TRACK (
 );
 
 
-- QUESTION SET 1 - EASY
+2.### QUESTION SET - EASY
 
-Q1: Who is the senior most employee based on job title? 
+Q1:#### Who is the senior most employee based on job title? 
 
 SELECT * 
 FROM employee
@@ -156,7 +158,7 @@ ORDER BY levels DESC
 LIMIT 1;
 
 
-Q2: Which countries have the most Invoices?
+Q2:#### Which countries have the most Invoices?
 
 SELECT 
     billing_country,
@@ -168,7 +170,7 @@ GROUP BY
 ORDER BY 
     total_countries DESC;
 
-Q3 : What are Top 3 values of total invoice?
+Q3:#### What are Top 3 values of total invoice?
 
 SELECT 
     total 
@@ -179,7 +181,7 @@ ORDER BY
 LIMIT 3;
 
 
-Q4 :Which city has the best customers? We would like to throw a promotional
+Q4:#### Which city has the best customers? We would like to throw a promotional
 Music Festival in the city we made the most money. Write a query that returns
 one city that has the highest sum of invoice totals. Return both the city name
 and sum of all invoice totals.
