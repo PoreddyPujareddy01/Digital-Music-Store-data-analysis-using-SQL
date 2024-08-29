@@ -18,9 +18,9 @@ This project is designed to provide a foundational understanding of data analysi
 
 ##### 1.Database Setup
 ![Screenshot 2024-08-29 083022](https://github.com/user-attachments/assets/fcc8e047-39eb-49f8-9596-1f8baba9e1fc)
-##### Database Creation: Created a datbase named music_store.
-##### Table Creation: Created tables for album,artist,customer,employee,genre,invoice,invoice_line,media_type,playlist,playtist_track,track. Each table includes relevant columns and relationships.
-
+##### Database Creation: *Created a datbase named music_store*.
+##### Table Creation: *Created tables for album,artist,customer,employee,genre,invoice,invoice_line,media_type,playlist,playtist_track,track. Each table includes relevant columns and relationships*.
+```
 CREATE DATABASE music_store;
 
 -- Create table "ALBUM"
@@ -127,3 +127,4 @@ CREATE TABLE TRACK (
     BYTES INT,
     UNIT_PRICE FLOAT
 );
+```
