@@ -234,7 +234,7 @@ WHERE track_id IN(
 	WHERE genre.name LIKE 'Rock')
 ORDER BY email;
 
-Q7 :Let's invite the artists who have written the most rock music in our dataset. 
+Q7: Let's invite the artists who have written the most rock music in our dataset.
 Write a query that returns the Artist name and total track count of the top 10 rock bands.
 
 SELECT 
@@ -257,12 +257,7 @@ ORDER BY
     number_of_songs DESC
 LIMIT 10;
 
-Q8 : Return all the track names that have a song length longer than the average song
-length. Return the name and milliseconds for each track. Order by the song length with
-the longest songs listed first.
-
-SELECT * FROM TRACK;
-SELECT * FROM PLAYLIST_TRACK;
+Q8: Return all the track names that have a song length longer than the average song length. Return the name and milliseconds for each track. Order by the song length with the longest songs listed first.
 
 SELECT 
     name, 
@@ -274,8 +269,7 @@ WHERE
 ORDER BY 
     milliseconds DESC;
 
-Q9 : Write a query to find the most popular music
-genre by counting the number of tracks per genre from the genre and track tables.
+Q9: Write a query to find the most popular music genre by counting the number of tracks per genre from the genre and track tables.
 
 SELECT 
     g.name AS genre_name, 
@@ -290,10 +284,9 @@ ORDER BY
     track_count DESC
 LIMIT 1;
 
-Q10 : Write a query to list all employees who work in a specific city,
-such as "Calgary," using the employee table.
+Q10: Write a query to list all employees who work in a specific city, such as "Calgary"
+using the employee table.
 
-SELECT * FROM EMPLOYEE;
 SELECT 
     employee_id, 
     first_name, 
@@ -304,6 +297,7 @@ FROM
     employee
 WHERE 
     city = 'Calgary';
+
 ```
 
 
