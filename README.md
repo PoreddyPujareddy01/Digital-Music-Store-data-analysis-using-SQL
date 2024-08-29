@@ -376,10 +376,10 @@ ORDER BY
     total_revenue DESC;
 ```
 
-### Reports
+### Reports:
 - Database Schema: Detailed table structures and relationships.
 - Data Analysis: Insights into genre categories, revenue generated, best city trends for
   promotional music festival and most popular artist.
 
-### Conclusion
+### Conclusion:
 This project on music store analysis showcases the application of SQL skills to derive meaningful insights from data. By analyzing genre categories, revenue generated, city trends for promotional music festivals, and popular artists, the project highlights the power of data in making informed business decisions. The insights gained provide valuable information for strategic planning, including identifying key genres for inventory management, optimizing marketing efforts based on city-specific trends, and understanding consumer preferences through popular artists. This analysis not only enhances the effectiveness of promotional strategies but also contributes to a more targeted approach in maximizing revenue and customer engagement in the music industry.
