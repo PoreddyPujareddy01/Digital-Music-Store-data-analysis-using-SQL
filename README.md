@@ -149,7 +149,7 @@ CREATE TABLE TRACK (
 ```
 
 ### 2.QUESTION SET - EASY
-
+```
 Q1:Who is the senior most employee based on job title? 
 
 SELECT * 
@@ -159,7 +159,7 @@ LIMIT 1;
 
 
 Q2: Which countries have the most Invoices?
-```
+
 SELECT 
     billing_country,
     COUNT(billing_country) AS total_countries
