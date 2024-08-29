@@ -149,17 +149,17 @@ CREATE TABLE TRACK (
 ```
 
 ### 2.QUESTION SET - EASY
-```SQL
-Q1:Who is the senior most employee based on job title? 
 
+Q1:Who is the senior most employee based on job title? 
+```sql
 SELECT * 
 FROM employee
 ORDER BY levels DESC
 LIMIT 1;
-
+```
 
 Q2: Which countries have the most Invoices?
-
+```sql
 SELECT 
     billing_country,
     COUNT(billing_country) AS total_countries
@@ -169,9 +169,9 @@ GROUP BY
     billing_country
 ORDER BY 
     total_countries DESC;
-
-Q4:What are Top 3 values of total invoice?
-
+```
+Q3:What are Top 3 values of total invoice?
+```sql
 SELECT 
     total 
 FROM 
@@ -179,13 +179,13 @@ FROM
 ORDER BY 
     total DESC
 LIMIT 3;
-
+```
 
 Q4: Which city has the best customers? We would like to throw a promotional
 Music Festival in the city we made the most money. Write a query that returns
 one city that has the highest sum of invoice totals. Return both the city name
 and sum of all invoice totals.
-
+```sql
 SELECT 
     billing_city,
     SUM(total) AS total_invoice
@@ -195,12 +195,12 @@ GROUP BY
     billing_city
 ORDER BY 
     total_invoice DESC;
-
+```
 
 Q5 :Who is the best customer?The customer who has spent the most money will
 be declared the best customer. Write a query that returns the person who has
 spent the most money.
-
+```sql
 SELECT 
     customer.customer_id,
     customer.first_name,
@@ -329,14 +329,14 @@ WITH popular_genre AS (
 SELECT *
 FROM popular_genre
 WHERE rowno = 1;
-
+```
 
 Q12 :Write a query that determines the customer that has spent the most on music for each country. 
 Write a query that returns the country along with the top customer and how much they spent. 
 For countries where the top amount spent is shared, provide all customers who spent this amount.
 SELECT * FROM INVOICE;
 SELECT * FROM CUSTOMER;
-
+```sql
 WITH popular_customer AS(
     SELECT 
 	customer.customer_id,
@@ -355,10 +355,10 @@ WITH popular_customer AS(
 SELECT * FROM
 popular_customer
 WHERE rowno <= 1;
-
+```
 Q13 : Write a query to calculate the total revenue generated
 per genre by joining the genre, track, invoice_line, and invoice tables.
-
+```sql
 SELECT 
     g.name AS genre_name,
     SUM(il.unit_price * il.quantity) AS total_revenue
