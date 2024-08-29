@@ -149,7 +149,7 @@ CREATE TABLE TRACK (
 ```
 
 ### 2.QUESTION SET - EASY
-```
+```SQL
 Q1:Who is the senior most employee based on job title? 
 
 SELECT * 
@@ -219,7 +219,7 @@ LIMIT 1;
 
 
 ### QUESTION SET 2 - MODERATE
-```
+```sql
 Q1 :Write query to return the email,first name,last name & genre of all
 Rock Music listerners. Return your list ordered alphabetically by email
 starting with A.
@@ -308,7 +308,7 @@ WHERE
 
 
 ### QUESTION SET 3 - ADVANCE
-```
+```sql
 Q1 : We want to find out the most popular music Genre for each country.
 We determine the most popular genre as the genre with the highest amount of purchases.
 Write a query that returns each country along with the top Genre. For countries where 
