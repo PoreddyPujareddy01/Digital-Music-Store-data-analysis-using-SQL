@@ -307,7 +307,7 @@ WHERE
 ```
 
 
-### 4.QUESTION SET 3 - ADVANCE
+### 4.QUESTION SET - ADVANCE
 ```sql
 Q11 : We want to find out the most popular music Genre for each country.
 We determine the most popular genre as the genre with the highest amount of purchases.
