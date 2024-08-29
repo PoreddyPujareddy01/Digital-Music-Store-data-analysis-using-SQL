@@ -375,3 +375,5 @@ GROUP BY
 ORDER BY 
     total_revenue DESC;
 ```
+
+### Consl
