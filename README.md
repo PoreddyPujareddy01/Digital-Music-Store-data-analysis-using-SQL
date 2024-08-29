@@ -218,7 +218,7 @@ LIMIT 1;
 ```
 
 
-### QUESTION SET - MODERATE
+### 3.QUESTION SET - MODERATE
 ```sql
 Q6 :Write query to return the email,first name,last name & genre of all
 Rock Music listerners. Return your list ordered alphabetically by email
@@ -307,7 +307,7 @@ WHERE
 ```
 
 
-### QUESTION SET 3 - ADVANCE
+### 4.QUESTION SET 3 - ADVANCE
 ```sql
 Q11 : We want to find out the most popular music Genre for each country.
 We determine the most popular genre as the genre with the highest amount of purchases.
