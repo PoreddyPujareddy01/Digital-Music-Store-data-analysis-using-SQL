@@ -141,4 +141,238 @@ CREATE TABLE TRACK (
     BYTES INT,
     UNIT_PRICE FLOAT
 );
+
+
+- QUESTION SET 1 - EASY
+
+Q1: Who is the senior most employee based on job title? 
+
+SELECT * 
+FROM employee
+ORDER BY levels DESC
+LIMIT 1;
+
+
+Q2: Which countries have the most Invoices?
+
+SELECT 
+    billing_country,
+    COUNT(billing_country) AS total_countries
+FROM 
+    invoice
+GROUP BY 
+    billing_country
+ORDER BY 
+    total_countries DESC;
+
+Q3 : What are Top 3 values of total invoice?
+
+SELECT 
+    total 
+FROM 
+    invoice
+ORDER BY 
+    total DESC
+LIMIT 3;
+
+
+Q4 :Which city has the best customers? We would like to throw a promotional
+Music Festival in the city we made the most money. Write a query that returns
+one city that has the highest sum of invoice totals. Return both the city name
+and sum of all invoice totals.
+
+SELECT 
+    billing_city,
+    SUM(total) AS total_invoice
+FROM 
+    invoice
+GROUP BY 
+    billing_city
+ORDER BY 
+    total_invoice DESC;
+
+
+Q5 :Who is the best customer?The customer who has spent the most money will
+be declared the best customer. Write a query that returns the person who has
+spent the most money.
+
+SELECT 
+    customer.customer_id,
+    customer.first_name,
+    customer.last_name,
+    SUM(invoice.total) AS total
+FROM 
+    customer 
+JOIN 
+    invoice ON customer.customer_id = invoice.customer_id
+GROUP BY 
+    customer.customer_id
+ORDER BY 
+    total DESC
+LIMIT 1;
+
+
+
+--- QUESTION SET 2 - MODERATE
+
+Q1 :Write query to return the email,first name,last name & genre of all
+Rock Music listerners. Return your list ordered alphabetically by email
+starting with A.
+
+SELECT DISTINCT email,first_name, last_name
+FROM customer
+JOIN invoice ON customer.customer_id = invoice.customer_id
+JOIN invoice_line ON invoice.invoice_id = invoice_line.invoice_id
+WHERE track_id IN(
+	SELECT track_id FROM track
+	JOIN genre ON track.genre_id = genre.genre_id
+	WHERE genre.name LIKE 'Rock')
+ORDER BY email;
+
+Q2: Let's invite the artists who have written the most rock music in our dataset. 
+Write a query that returns the Artist name and total track count of the top 10 rock bands.
+
+SELECT 
+    artist.artist_id, 
+    artist.name,
+    COUNT(artist.artist_id) AS number_of_songs
+FROM 
+    track
+JOIN 
+    album ON album.album_id = track.album_id
+JOIN 
+    artist ON artist.artist_id = album.artist_id
+JOIN 
+    genre ON genre.genre_id = track.genre_id
+WHERE 
+    genre.name LIKE 'Rock'
+GROUP BY 
+    artist.artist_id, artist.name
+ORDER BY 
+    number_of_songs DESC
+LIMIT 10;
+
+Q3 : Return all the track names that have a song length longer than the average song
+length. Return the name and milliseconds for each track. Order by the song length with
+the longest songs listed first.
+
+SELECT * FROM TRACK;
+SELECT * FROM PLAYLIST_TRACK;
+
+SELECT 
+    name, 
+    milliseconds 
+FROM 
+    track 
+WHERE 
+    milliseconds > (SELECT AVG(milliseconds) AS avg_song_length FROM track)
+ORDER BY 
+    milliseconds DESC;
+
+Q4 : Write a query to find the most popular music
+genre by counting the number of tracks per genre from the genre and track tables.
+
+SELECT 
+    g.name AS genre_name, 
+    COUNT(t.track_id) AS track_count
+FROM 
+    genre g
+JOIN 
+    track t ON g.genre_id = t.genre_id
+GROUP BY 
+    g.name
+ORDER BY 
+    track_count DESC
+LIMIT 1;
+
+Q5 : Write a query to list all employees who work in a specific city,
+such as "Calgary," using the employee table.
+
+SELECT * FROM EMPLOYEE;
+SELECT 
+    employee_id, 
+    first_name, 
+    last_name, 
+    title, 
+    city
+FROM 
+    employee
+WHERE 
+    city = 'Calgary';
+
+
+
+--- QUESTION SET 3 - ADVANCE
+
+Q1 : We want to find out the most popular music Genre for each country.
+We determine the most popular genre as the genre with the highest amount of purchases.
+Write a query that returns each country along with the top Genre. For countries where 
+the maximum number of purchases is shared return all Genres.
+
+WITH popular_genre AS (
+    SELECT 
+        COUNT(invoice_line.quantity) AS purchases,
+        customer.country,
+        genre.name AS genre_name,
+        genre.genre_id,
+        ROW_NUMBER() OVER (
+            PARTITION BY customer.country
+            ORDER BY COUNT(invoice_line.quantity) DESC
+        ) AS rowno
+    FROM invoice_line
+    JOIN invoice ON invoice.invoice_id = invoice_line.invoice_id
+    JOIN customer ON customer.customer_id = invoice.customer_id
+    JOIN track ON track.track_id = invoice_line.track_id
+    JOIN genre ON genre.genre_id = track.genre_id
+    GROUP BY customer.country, genre.name, genre.genre_id
+    ORDER BY customer.country ASC, purchases DESC
+)
+SELECT *
+FROM popular_genre
+WHERE rowno = 1;
+
+
+Q2 :Write a query that determines the customer that has spent the most on music for each country. 
+Write a query that returns the country along with the top customer and how much they spent. 
+For countries where the top amount spent is shared, provide all customers who spent this amount.
+SELECT * FROM INVOICE;
+SELECT * FROM CUSTOMER;
+
+WITH popular_customer AS(
+    SELECT 
+	customer.customer_id,
+	first_name,last_name,
+	billing_country,
+	SUM(total) AS total_expenses,
+    ROW_NUMBER() OVER(
+	PARTITION BY billing_country
+	ORDER BY SUM(total) DESC
+	) AS rowno
+  FROM customer 
+  JOIN invoice on invoice.customer_id = customer.customer_id
+  GROUP BY 1,2,3,4
+  ORDER BY 4 ASC, 5 DESC
+)
+SELECT * FROM
+popular_customer
+WHERE rowno <= 1;
+
+Q3 : Write a query to calculate the total revenue generated
+per genre by joining the genre, track, invoice_line, and invoice tables.
+
+SELECT 
+    g.name AS genre_name,
+    SUM(il.unit_price * il.quantity) AS total_revenue
+FROM 
+    genre g
+JOIN 
+    track t ON g.genre_id = t.genre_id
+JOIN 
+    invoice_line il ON t.track_id = il.track_id
+JOIN 
+    invoice i ON il.invoice_id = i.invoice_id
+GROUP BY 
+    g.name
+ORDER BY 
+    total_revenue DESC;
 ```
