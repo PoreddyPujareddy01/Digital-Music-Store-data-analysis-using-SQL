@@ -148,9 +148,9 @@ CREATE TABLE TRACK (
 );
 ```
 
-2.### QUESTION SET - EASY
+### 2.QUESTION SET - EASY
 
-Q1:#### Who is the senior most employee based on job title? 
+Q1:Who is the senior most employee based on job title? 
 
 SELECT * 
 FROM employee
@@ -158,8 +158,8 @@ ORDER BY levels DESC
 LIMIT 1;
 
 
-Q2:#### Which countries have the most Invoices?
-
+Q2: Which countries have the most Invoices?
+```
 SELECT 
     billing_country,
     COUNT(billing_country) AS total_countries
@@ -170,7 +170,7 @@ GROUP BY
 ORDER BY 
     total_countries DESC;
 
-Q3:#### What are Top 3 values of total invoice?
+Q4:What are Top 3 values of total invoice?
 
 SELECT 
     total 
@@ -181,7 +181,7 @@ ORDER BY
 LIMIT 3;
 
 
-Q4:#### Which city has the best customers? We would like to throw a promotional
+Q4: Which city has the best customers? We would like to throw a promotional
 Music Festival in the city we made the most money. Write a query that returns
 one city that has the highest sum of invoice totals. Return both the city name
 and sum of all invoice totals.
@@ -215,11 +215,11 @@ GROUP BY
 ORDER BY 
     total DESC
 LIMIT 1;
+```
 
 
-
---- QUESTION SET 2 - MODERATE
-
+### QUESTION SET 2 - MODERATE
+```
 Q1 :Write query to return the email,first name,last name & genre of all
 Rock Music listerners. Return your list ordered alphabetically by email
 starting with A.
@@ -304,11 +304,11 @@ FROM
     employee
 WHERE 
     city = 'Calgary';
+```
 
 
-
---- QUESTION SET 3 - ADVANCE
-
+### QUESTION SET 3 - ADVANCE
+```
 Q1 : We want to find out the most popular music Genre for each country.
 We determine the most popular genre as the genre with the highest amount of purchases.
 Write a query that returns each country along with the top Genre. For countries where 
