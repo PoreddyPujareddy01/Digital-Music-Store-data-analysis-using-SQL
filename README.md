@@ -302,12 +302,12 @@ WHERE
 
 
 ### 4.QUESTION SET - ADVANCE
-```sql
+
 Q11 : We want to find out the most popular music Genre for each country.
 We determine the most popular genre as the genre with the highest amount of purchases.
 Write a query that returns each country along with the top Genre. For countries where 
 the maximum number of purchases is shared return all Genres.
-
+```sql
 WITH popular_genre AS (
     SELECT 
         COUNT(invoice_line.quantity) AS purchases,
