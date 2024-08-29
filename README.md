@@ -1,7 +1,7 @@
 # SQL_PROJECT_MUSIC_STORE_ANALYSIS
 ## Project Overview
 ### Project Title: Music Store Analysis
-#### Database: music_store
+### Database: music_store
 
 This project is designed to provide a foundational understanding of data analysis using SQL within the context of a music store’s playlist database. Participants will learn how to navigate and analyze a dataset to derive actionable insights that can inform business decisions and support strategic growth.
 
