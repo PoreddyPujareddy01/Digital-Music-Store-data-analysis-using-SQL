@@ -14,9 +14,9 @@ This project is designed to provide a foundational understanding of data analysi
 
 2._CTAS_ (Create Table As Select): Utilize CTAS to create new tables based on query results.
 
-### Project Structure
+## Project Structure
 
-#### 1.Database Setup
+### 1.Database Setup
 ![Screenshot 2024-08-29 083022](https://github.com/user-attachments/assets/fcc8e047-39eb-49f8-9596-1f8baba9e1fc)
 
 ##### **Database Creation**: Created a datbase named music_store.
