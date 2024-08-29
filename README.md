@@ -4,7 +4,8 @@
 #### Database: music_store
 
 This project is designed to provide a foundational understanding of data analysis using SQL within the context of a music store’s playlist database. Participants will learn how to navigate and analyze a dataset to derive actionable insights that can inform business decisions and support strategic growth.
-![music](https://github.com/user-attachments/assets/3ae30b60-9712-4c43-8e03-bf6e1d79843d)
+![music2](https://github.com/user-attachments/assets/f11cb983-3438-4b39-89f9-58608ed59b42)
+
 
 
 ##### Objectives:
