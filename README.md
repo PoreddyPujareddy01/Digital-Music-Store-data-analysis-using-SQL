@@ -374,7 +374,8 @@ ORDER BY
     total_revenue DESC;
 ```
 
-*** Reports:
+### Reports:
+***
 - Database Schema: Detailed table structures and relationships.
 - Data Analysis: Insights into genre categories, revenue generated, best city trends for
   promotional music festival and most popular artist.
