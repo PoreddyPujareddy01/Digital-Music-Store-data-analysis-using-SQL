@@ -150,7 +150,7 @@ CREATE TABLE TRACK (
 
 ### 2.QUESTION SET - EASY
 
-** Q1:Who is the senior most employee based on job title? **
+__Q1:Who is the senior most employee based on job title?__
 ```sql
 SELECT * 
 FROM employee
@@ -158,7 +158,7 @@ ORDER BY levels DESC
 LIMIT 1;
 ```
 
-#### Q2: Which countries have the most Invoices?
+__Q2: Which countries have the most Invoices?__
 ```sql
 SELECT 
     billing_country,
@@ -170,7 +170,7 @@ GROUP BY
 ORDER BY 
     total_countries DESC;
 ```
-#### Q3:What are Top 3 values of total invoice?
+__Q3:What are Top 3 values of total invoice?__
 ```sql
 SELECT 
     total 
@@ -181,10 +181,10 @@ ORDER BY
 LIMIT 3;
 ```
 
-#### Q4: Which city has the best customers? We would like to throw a promotional
-#### Music Festival in the city we made the most money. Write a query that returns
-#### one city that has the highest sum of invoice totals. Return both the city name
-#### and sum of all invoice totals.
+__Q4: Which city has the best customers? We would like to throw a promotional
+Music Festival in the city we made the most money. Write a query that returns
+one city that has the highest sum of invoice totals. Return both the city name
+and sum of all invoice totals.__
 ```sql
 SELECT 
     billing_city,
@@ -197,9 +197,9 @@ ORDER BY
     total_invoice DESC;
 ```
 
-#### Q5 :Who is the best customer?The customer who has spent the most money will
+__Q5 :Who is the best customer?The customer who has spent the most money will
 be declared the best customer. Write a query that returns the person who has
-spent the most money.
+spent the most money.__
 ```sql
 SELECT 
     customer.customer_id,
@@ -220,9 +220,9 @@ LIMIT 1;
 
 ### 3.QUESTION SET - MODERATE
 
-#### Q6 :Write query to return the email,first name,last name & genre of all
+__Q6 :Write query to return the email,first name,last name & genre of all
 Rock Music listerners. Return your list ordered alphabetically by email
-starting with A.
+starting with A.__
 ```sql
 SELECT DISTINCT email,first_name, last_name
 FROM customer
@@ -234,8 +234,8 @@ WHERE track_id IN(
 	WHERE genre.name LIKE 'Rock')
 ORDER BY email;
 ```
-#### Q7: Let's invite the artists who have written the most rock music in our dataset.
-Write a query that returns the Artist name and total track count of the top 10 rock bands.
+__Q7: Let's invite the artists who have written the most rock music in our dataset.
+Write a query that returns the Artist name and total track count of the top 10 rock bands.__
 ```sql
 SELECT 
     artist.artist_id, 
@@ -257,7 +257,7 @@ ORDER BY
     number_of_songs DESC
 LIMIT 10;
 ```
-#### Q8: Return all the track names that have a song length longer than the average song length. Return the name and milliseconds for each track. Order by the song length with the longest songs listed first.
+__Q8: Return all the track names that have a song length longer than the average song length. Return the name and milliseconds for each track. Order by the song length with the longest songs listed first.__
 ```sql
 SELECT 
     name, 
@@ -269,7 +269,7 @@ WHERE
 ORDER BY 
     milliseconds DESC;
 ```
-#### Q9: Write a query to find the most popular music genre by counting the number of tracks per genre from the genre and track tables.
+__Q9: Write a query to find the most popular music genre by counting the number of tracks per genre from the genre and track tables.__
 ```sql
 SELECT 
     g.name AS genre_name, 
@@ -284,8 +284,8 @@ ORDER BY
     track_count DESC
 LIMIT 1;
 ```
-#### Q10: Write a query to list all employees who work in a specific city, such as "Calgary"
-using the employee table.
+__Q10: Write a query to list all employees who work in a specific city, such as "Calgary"
+using the employee table.__
 ```sql
 SELECT 
     employee_id, 
@@ -303,10 +303,10 @@ WHERE
 
 ### 4.QUESTION SET - ADVANCE
 
-#### Q11 : We want to find out the most popular music Genre for each country.
+__Q11 : We want to find out the most popular music Genre for each country.
 We determine the most popular genre as the genre with the highest amount of purchases.
 Write a query that returns each country along with the top Genre. For countries where 
-the maximum number of purchases is shared return all Genres.
+the maximum number of purchases is shared return all Genres.__
 ```sql
 WITH popular_genre AS (
     SELECT 
@@ -331,9 +331,7 @@ FROM popular_genre
 WHERE rowno = 1;
 ```
 
-#### Q12 :Write a query that determines the customer that has spent the most on music for each country. 
-Write a query that returns the country along with the top customer and how much they spent. 
-For countries where the top amount spent is shared, provide all customers who spent this amount.
+__Q12 :Write a query that determines the customer that has spent the most on music for each country. Write a query that returns the country along with the top customer and how much they spent. For countries where the top amount spent is shared, provide all customers who spent this amount.__
 SELECT * FROM INVOICE;
 SELECT * FROM CUSTOMER;
 ```sql
@@ -356,8 +354,8 @@ SELECT * FROM
 popular_customer
 WHERE rowno <= 1;
 ```
-#### Q13 : Write a query to calculate the total revenue generated
-per genre by joining the genre, track, invoice_line, and invoice tables.
+__Q13 : Write a query to calculate the total revenue generated
+per genre by joining the genre, track, invoice_line, and invoice tables.__
 ```sql
 SELECT 
     g.name AS genre_name,
@@ -376,10 +374,11 @@ ORDER BY
     total_revenue DESC;
 ```
 
-### Reports:
+*** Reports:
 - Database Schema: Detailed table structures and relationships.
 - Data Analysis: Insights into genre categories, revenue generated, best city trends for
   promotional music festival and most popular artist.
 
 ### Conclusion:
+***
 This project on music store analysis showcases the application of SQL skills to derive meaningful insights from data. By analyzing genre categories, revenue generated, city trends for promotional music festivals, and popular artists, the project highlights the power of data in making informed business decisions. The insights gained provide valuable information for strategic planning, including identifying key genres for inventory management, optimizing marketing efforts based on city-specific trends, and understanding consumer preferences through popular artists. This analysis not only enhances the effectiveness of promotional strategies but also contributes to a more targeted approach in maximizing revenue and customer engagement in the music industry.
