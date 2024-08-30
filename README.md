@@ -377,6 +377,7 @@ ORDER BY
 ### Reports:
 ***
 __Database Schema__: Detailed table structures and relationships.
+
 __Data Analysis__: Insights into genre categories, revenue generated, best city trends for
   promotional music festival and most popular artist.
 
