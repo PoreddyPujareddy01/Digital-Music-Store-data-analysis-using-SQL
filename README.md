@@ -10,9 +10,9 @@ This project is designed to provide a foundational understanding of data analysi
 
 
 ### Objectives:
-1.Learn to analyze a music playlist database using SQL to uncover insights that drive business decisions and support strategic growth.
+__1.Learn to analyze a music playlist database using SQL to uncover insights that drive business decisions and support strategic growth.__
 
-2._CTAS_ (Create Table As Select): Utilize CTAS to create new tables based on query results.
+__2.CTAS (Create Table As Select): Utilize CTAS to create new tables based on query results.__
 ## Database and Tools
 - Postgre SQL
 - PgAdmin4
