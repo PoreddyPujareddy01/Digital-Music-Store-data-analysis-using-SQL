@@ -21,9 +21,9 @@ __2.CTAS (Create Table As Select): Utilize CTAS to create new tables based on qu
 ### 1.Database Setup
 ![Screenshot 2024-08-29 083022](https://github.com/user-attachments/assets/fcc8e047-39eb-49f8-9596-1f8baba9e1fc)
 
--  Database Creation: *Created a datbase named music_store*.
+__Database Creation: Created a datbase named music_store.__
 
-- Table Creation: *Created tables for album,artist,customer,employee,genre,invoice,invoice_line,media_type,playlist,playtist_track,track. Each table includes relevant columns and relationships*.
+__Table Creation: Created tables for album,artist,customer,employee,genre,invoice,invoice_line,media_type,playlist,playtist_track,track. Each table includes relevant columns and relationships.__
 
 ```sql
 CREATE DATABASE music_store;
