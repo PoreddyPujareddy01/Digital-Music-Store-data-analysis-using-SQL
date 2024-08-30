@@ -14,7 +14,7 @@ __1.Learn to analyze a music playlist database using SQL to uncover insights tha
 
 __2.CTAS (Create Table As Select): Utilize CTAS to create new tables based on query results.__
 ## Database and Tools
-- Postgre SQL
+- PostgreSQL
 - PgAdmin4
 ### Project Structure:
 
